@@ -1,0 +1,73 @@
+Ce document explique comment se servir du programme amibe.sage. 
+Il permet de visualiser des amibes non-archimédiennes de courbes, 
+la dualité amibe / subdivision du polygone de Newton, ainsi que la 
+condition d'équilibre en chaque étoilé de l'amibe.
+
+Pour que amibe.sage fonctionne, il vous faut :
+
+	- le logiciel sagemath, www.sagemath.org ( et donc Python )
+	- la librairie Python matplotlib pour l'affichage, 
+	  www.matplotlib.org
+
+Pour lancer le programme, il vous suffit alors de lancer le fichier 
+amibe.sage avec sage en tapant dans la console: sage amibe.sage
+
+Si tout se passe bien, une fenetre devrait s'ouvrir, avec un polynome 
+chargé par défault.
+
+Vous avez 3 panneaux : celui de gauche montre l'amibe du polynôme 
+et celui de droite la subdivision du polygone de Newton associée, 
+avec un code couleur évident. Les points blancs sur les arêtes de 
+la subdivision montrent les points à coordonnées entières, et
+permettent donc de rapidement calculer les poids.
+
+Il vous suffit alors de survoler une zone colorée autour d'un point 
+de l'amibe pour voir apparaître dans la fenêtre du milieu la 
+condition d'équilibre associée.
+Les vecteurs en gras sont ceux avant la multiplication par leurs poids,
+tandis que ceux plus fin ( si poids > 1 ) sont ceux après 
+multiplication par leurs poids.
+
+Bien sûr vous pouvez changer dans les champs de saisie les coordonnées 
+des mômomes et les poids associés, puis appuyer sur Ok pour générer 
+la nouvelle amibe. Il est très amusant par exemple de changer 
+uniquement les poids pour un polynome donné, et d'observer ce qui se passe.
+
+Les champs de saisie de matplotlib sont très lents, donc j'ai ajouté 
+l'option de passer le polynôme par fichier. Il vous suffit pour cela 
+d'ajouter le nom du fichier à la commande de lancement : 
+  
+   sage amibe.sage /chemin/vers/mon/fichier/mon_fichier.
+
+La synthaxe est la suivant :
+
+(x1,y1), (x2,y2), ... , (xn,yn) : p1, p2, ... , pn
+
+où (xi,yi) sont les puissances des mônomes et pi les poids associés. 
+
+Attention, le programme ne fait aucune vérification donc il faut bien 
+sûr que'il y ait autant de monomes que de poids et que les monomes soient
+2 à 2 distincts, et que la synthaxe soit respéctée.
+
+Il est possible de mettre plusieurs polynomes dans un fichier, un par ligne.
+Si plusieurs polynômes sont présents, deux flèches Gauche/Droite apparaîtront
+dans le programme et vous permettront de passer d'un polynome à l'autre facilement.
+
+Petits conseils :
+
+  - N'hésitez pas à mettre le fenêtre en plein écran, matplotlib est vectoriel,
+    pas de perte de qualité. Util pour bien voir parfois.
+
+  - Si vous commencez à essayer des puissances / poids grands ( disons | x | > 15 ),
+    alors il se peut que l'affichage de la condition d'équilibre ne soit pas très clair.
+    Pas de souci, un clic gauche dans la fenêtre de l'amibe fige la fenêtre du milieu, 
+    et vous pouvez alors utiliser les outils de zoom ( en bas à gauche ) pour mieux voir
+    certains endroits. Une fois terminé, un nouveau clic gauche dans la fenetre de l'amibe
+    remet tout à zéro et vous pouvez continuer votre exploration.
+
+En interne, le code implémente ce que l'on trouve dans MacLagan et Sturmfels 
+pages 98 - 99. Voir le fichier amibe.sage.
+
+Je n'ai testé mon proramme que sous Linux, mais il devrait fonctionner 
+sur toute plateforme possédant sage et matplotlib 
+( utiliser les dernières versions à jour ).
