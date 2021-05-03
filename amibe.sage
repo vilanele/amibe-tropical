@@ -1,6 +1,3 @@
-# legrand.lucas.pro@hotmail.fr
-# Cours M2 Geometrie tropicale, M.Chambert-Loire
-
 import matplotlib.pyplot as plt
 from matplotlib.widgets import TextBox, Button
 from sage.misc.parser import Parser, Tokenizer
